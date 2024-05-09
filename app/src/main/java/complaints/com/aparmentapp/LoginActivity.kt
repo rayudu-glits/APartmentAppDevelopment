@@ -22,9 +22,9 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
-    var user_name: EditText? = null
+    private var user_name: EditText? = null
     var password: EditText? = null
-    var login_btn: Button? = null
+    private var login_btn: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -32,19 +32,19 @@ class LoginActivity : AppCompatActivity() {
         password = findViewById<View>(R.id.password) as EditText
         login_btn = findViewById<View>(R.id.login_btn) as Button
         login_btn!!.setOnClickListener {
-            if (user_name!!.text.toString().length == 0) {
+            if (user_name!!.text.toString().isEmpty()) {
                 Toast.makeText(this@LoginActivity, "Please Enter User name", Toast.LENGTH_SHORT)
                     .show()
-            } else if (password!!.text.toString().length == 0) {
+            } else if (password!!.text.toString().isEmpty()) {
                 Toast.makeText(this@LoginActivity, "Please Enter Password", Toast.LENGTH_SHORT)
                     .show()
             } else {
-                CheckLoginCredentials(user_name!!.text.toString(), password!!.text.toString())
+                checkLoginCredentials(user_name!!.text.toString(), password!!.text.toString())
             }
         }
     }
 
-    private fun CheckLoginCredentials(uname: String, pwd: String) {
+    private fun checkLoginCredentials(uname: String, pwd: String) {
         val progressdialog = BaseUrlClass.createProgressDialog(this@LoginActivity)
         progressdialog.show()
         progressdialog.setCancelable(false)
@@ -52,48 +52,46 @@ class LoginActivity : AppCompatActivity() {
         Log.d("TAG", "login clicked")
         val stringRequest: StringRequest = object : StringRequest(
             Method.POST, URL,
-            object : Response.Listener<String?> {
-                override fun onResponse(response: String?) {
-                    println(response)
-                    var jsonObject: JSONObject? = null
-                    Log.d("TAG", "login clicked $response")
+            Response.Listener<String?> { response ->
+                println(response)
+                var jsonObject: JSONObject? = null
+                Log.d("TAG", "login clicked $response")
+                try {
+                    jsonObject = JSONObject(response)
+                    Log.d("TAG", "login clicked 6 $jsonObject")
                     try {
-                        jsonObject = JSONObject(response)
-                        Log.d("TAG", "login clicked 6 $jsonObject")
-                        try {
-                            val message = jsonObject.getString("msg")
-                            Log.d("TAG", "login clicked 7 $message")
-                            if (message == "Success") {
-                                val operatorLoginData = Gson().fromJson<EmployeeModel>(
-                                    jsonObject.getString("0").toString(),
-                                    object : TypeToken<EmployeeModel?>() {}.type
-                                )
-                                SaveAppData.saveEmpLoginData(operatorLoginData)
-                                progressdialog.dismiss()
-                                val regIntent = Intent(this@LoginActivity, MainActivity::class.java)
-                                startActivity(regIntent)
-                                finish()
-                            } else {
-                                progressdialog.dismiss()
-                                Toast.makeText(
-                                    this@LoginActivity,
-                                    "Invalid Login Credentials",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                                Log.d("TAG", "login clicked 2")
-                            }
-                            //Process os success response
-                        } catch (e: JSONException) {
+                        val message = jsonObject.getString("msg")
+                        Log.d("TAG", "login clicked 7 $message")
+                        if (message == "Success") {
+                            val operatorLoginData = Gson().fromJson<EmployeeModel>(
+                                jsonObject.getString("0").toString(),
+                                object : TypeToken<EmployeeModel?>() {}.type
+                            )
+                            SaveAppData.saveEmpLoginData(operatorLoginData)
                             progressdialog.dismiss()
-                            e.printStackTrace()
-                            Log.d("TAG", "login clicked 3 $e")
+                            val regIntent = Intent(this@LoginActivity, MainActivity::class.java)
+                            startActivity(regIntent)
+                            finish()
+                        } else {
+                            progressdialog.dismiss()
+                            Toast.makeText(
+                                this@LoginActivity,
+                                "Invalid Login Credentials",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            Log.d("TAG", "login clicked 2")
                         }
+                        //Process os success response
                     } catch (e: JSONException) {
-                        e.printStackTrace()
                         progressdialog.dismiss()
-                        Log.d("TAG", "login clicked 4 $e")
-                        // Constants.createDialoges(ConformBookingActivity.this, getResources().getString(R.string.get_bonus));
+                        e.printStackTrace()
+                        Log.d("TAG", "login clicked 3 $e")
                     }
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                    progressdialog.dismiss()
+                    Log.d("TAG", "login clicked 4 $e")
+                    // Constants.createDialoges(ConformBookingActivity.this, getResources().getString(R.string.get_bonus));
                 }
             },
             Response.ErrorListener { error ->

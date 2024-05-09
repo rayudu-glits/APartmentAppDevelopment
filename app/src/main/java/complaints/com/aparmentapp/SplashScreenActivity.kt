@@ -19,11 +19,11 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
         activity = this
         val zoom = findViewById<View>(R.id.logo) as ImageView
-        val ZoomOut = findViewById<View>(R.id.tv_welcome) as TextView
+        val zoomOut = findViewById<View>(R.id.tv_welcome) as TextView
         val zoomAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom)
         zoom.startAnimation(zoomAnimation)
         val animZoomOut = AnimationUtils.loadAnimation(applicationContext, R.anim.zoom_out)
-        ZoomOut.startAnimation(animZoomOut)
+        zoomOut.startAnimation(animZoomOut)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
         Handler(Looper.getMainLooper()).postDelayed({
             if (SaveAppData.getLoginData() != null) {
