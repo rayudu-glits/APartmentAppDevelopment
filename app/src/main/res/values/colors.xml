@@ -7,6 +7,7 @@
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#32CD32</color>
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
     <color name="green">#32CD32</color>
     <color name="red_bg">#ff0000</color>
     <color name="linecolor">#696969</color>
