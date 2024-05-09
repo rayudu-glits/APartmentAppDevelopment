@@ -236,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
 
             if (requestCode == 112) {
@@ -244,11 +245,11 @@ public class MainActivity extends AppCompatActivity {
                     InputStream ims = getContentResolver().openInputStream(mImage_of_camera);
                     BitmapFactory.Options options = new BitmapFactory.Options();
                     options.inSampleSize = 14;
-                    bitmap2= BitmapFactory.decodeStream(ims,null,options);
+                    bitmap2 = BitmapFactory.decodeStream(ims, null, options);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
-                int nh = (int) ( bitmap2.getHeight() * (512.0 / bitmap2.getWidth()) );
+                int nh = (int) (bitmap2.getHeight() * (512.0 / bitmap2.getWidth()));
                 bitmap2 = Bitmap.createScaledBitmap(bitmap2, 512, nh, true);
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 bitmap2.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
