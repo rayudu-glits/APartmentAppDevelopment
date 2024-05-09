@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/tv_hname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Event Name : "/>
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_hname"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/blue"
+            android:text=" "/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:layout_below="@+id/tv_name">
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Amount"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/edit"
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:drawableStart="@drawable/edit_blue"
+                android:drawableLeft="@drawable/edit_blue"
+                android:textColor="@color/green"
+                android:layout_height="wrap_content"
+                android:text="Edit"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#80e5e5e5"
+        android:weightSum="2"
+        android:layout_below="@+id/rl_details">
+
+        <TextView
+            android:id="@+id/strt_date"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_action_calender"
+            android:drawableLeft="@drawable/ic_action_calender"
+            android:textColor="@color/red_bg"
+            android:layout_height="wrap_content"
+            android:text="10-06-2018"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_action_calender"
+            android:drawableLeft="@drawable/ic_action_calender"
+            android:textColor="@color/red_bg"
+            android:layout_height="wrap_content"
+            android:text="10-06-2018"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#e5e5e5"/>
+
+    </LinearLayout>
+</RelativeLayout>

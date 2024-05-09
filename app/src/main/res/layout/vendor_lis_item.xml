@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/tv_hname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Name   : "/>
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_hname"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/blue"
+            android:text="Hari Krishna"/>
+        <TextView
+            android:id="@+id/tv_hflat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="Type     : "/>
+        <TextView
+            android:id="@+id/tv_flat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_toRightOf="@+id/tv_hflat"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/blue"
+            android:text="Electrician"/>
+        <TextView
+            android:id="@+id/tv_comptype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tv_flat"
+            android:layout_marginLeft="10dp"
+            android:text="Address"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#80e5e5e5"
+        android:weightSum="3"
+        android:layout_below="@+id/rl_details">
+        <TextView
+            android:id="@+id/tv_mobile"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/phone_icon"
+            android:drawableLeft="@drawable/phone_icon"
+            android:textColor="@color/red_bg"
+            android:layout_height="wrap_content"
+            android:text="9032531341"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:textColor="@color/red_bg"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#e5e5e5"/>
+
+        <TextView
+            android:id="@+id/edit"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:drawableStart="@drawable/edit_blue"
+            android:drawableLeft="@drawable/edit_blue"
+            android:textColor="@color/green"
+            android:layout_height="wrap_content"
+            android:text="Edit"/>
+    </LinearLayout>
+</RelativeLayout>

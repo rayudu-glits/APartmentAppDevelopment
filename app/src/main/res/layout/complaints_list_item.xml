@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+    <ImageView
+        android:id="@+id/img_comp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_action_name"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/img_comp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Hari Krishna"/>
+        <TextView
+            android:id="@+id/tv_flat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/img_comp"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="Hari Krishna"/>
+        <TextView
+            android:id="@+id/tv_comptype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/img_comp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tv_flat"
+            android:layout_marginLeft="10dp"
+            android:text="Comp Type"/>
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/img_comp"
+            android:layout_below="@+id/tv_comptype"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="Description"/>
+
+        <ImageView
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit_blue"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:background="#80e5e5e5"
+        android:layout_below="@+id/rl_details">
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            android:layout_width="0dp"
+            android:layout_weight="1.2"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/phone_icon"
+            android:drawableLeft="@drawable/phone_icon"
+            android:textColor="@color/red_bg"
+            android:layout_height="wrap_content"
+            android:text="9032531341"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#e5e5e5"/>
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:textColor="@color/red_bg"
+            android:layout_height="wrap_content"
+            android:text="Pending"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#e5e5e5"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:textColor="@color/red_bg"
+            android:layout_height="wrap_content"
+            android:text="Tkt # 12345678"/>
+    </LinearLayout>
+</RelativeLayout>
