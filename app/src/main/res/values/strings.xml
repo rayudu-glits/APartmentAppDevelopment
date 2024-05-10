@@ -11,6 +11,7 @@
     <string name="file_provider_authority">complaints.com.aparmentapp.Fragments.fileprovider</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+
     <string-array name="SelectType">
         <item>Select Type</item>
         <item>Admin</item>
@@ -21,6 +22,15 @@
         <item>Pending</item>
         <item>Processing</item>
         <item>Completed</item>
+    </string-array>
+    <string-array name="Block">
+        <item>WING</item>
+        <item>FLY</item>
+        <item>B-BLOCk</item>
+    </string-array>
+    <string-array name="Vehicle_type">
+        <item>Two wheeler</item>
+        <item>Four wheeler</item>
     </string-array>
     <string-array name="package_array">
         <item>Package</item>

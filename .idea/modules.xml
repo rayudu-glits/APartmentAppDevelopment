@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/APartmentAppDevelopment.iml" filepath="$PROJECT_DIR$/.idea/modules/APartmentAppDevelopment.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/APartmentAppDevelopment.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/APartmentAppDevelopment.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/APartmentAppDevelopment.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/APartmentAppDevelopment.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/APartmentAppDevelopment.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/APartmentAppDevelopment.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/APartmentAppDevelopment.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/APartmentAppDevelopment.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/APartment_App_Development.iml" filepath="$PROJECT_DIR$/.idea/modules/APartment_App_Development.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/APartment_App_Development.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/APartment_App_Development.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/APartment_App_Development.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/APartment_App_Development.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/APartment_App_Development.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/APartment_App_Development.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/APartment_App_Development.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/APartment_App_Development.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DigitalGate.iml" filepath="$PROJECT_DIR$/.idea/modules/DigitalGate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DigitalGate.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DigitalGate.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DigitalGate.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DigitalGate.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DigitalGate.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DigitalGate.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DigitalGate.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DigitalGate.app.unitTest.iml" />
     </modules>
   </component>
 </project>
