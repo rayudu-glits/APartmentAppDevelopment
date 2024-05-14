@@ -69,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
                             )
                             SaveAppData.saveEmpLoginData(operatorLoginData)
                             progressdialog.dismiss()
-                            val regIntent = Intent(this@LoginActivity, InstantApprovalSecurity::class.java)
+                            val regIntent = Intent(this@LoginActivity, MainActivity2::class.java)
                             startActivity(regIntent)
                             finish()
                         } else {

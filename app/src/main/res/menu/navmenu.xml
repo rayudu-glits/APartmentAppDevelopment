@@ -4,23 +4,31 @@
     tools:showIn="navigation_view">
    <item
     android:id="@+id/profile"
-    android:title="Profile"/>
+    android:title="Profile"
+       android:icon="@drawable/profile_icn"/>
     <item
         android:id="@+id/home"
-        android:title="Home" />
+        android:title="Home"
+        android:icon="@drawable/home1"/>
 
     <item
         android:id="@+id/preApproval"
-        android:title="Pre Approval" />
-
+        android:title="Pre Approval"
+        android:icon="@drawable/add"/>
 
     <item
         android:id="@+id/post_approval"
-        android:title="Post Approval" />
+        android:title="Post Approval"
+        android:icon="@drawable/user1"/>
+    <item
+        android:id="@+id/Settings"
+        android:title="Settings"
+        android:icon="@drawable/settings"/>
 
     <item
-        android:id="@+id/Logout"
-        android:title="Logout" />
-
-
+        android:id="@+id/rv_Logout"
+        android:title="Logout"
+        android:icon="@drawable/logout_icon"/>
+ <item
+     android:title="Version 1.0" />
 </menu>

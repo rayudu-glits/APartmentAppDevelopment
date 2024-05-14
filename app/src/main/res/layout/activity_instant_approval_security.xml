@@ -6,44 +6,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="10"
     android:background="@drawable/background_gradient">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
-            android:layout_height="0dp"
-            android:layout_weight="0.8"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="2">
                 <ImageView
                     android:id="@+id/back_btn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:padding="2dp"
-                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:scaleType="centerInside"
                     android:src="@drawable/back" />
-
                 <TextView
-                    android:id="@+id/tlbar_title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textStyle="bold"
                     android:text="Digital Gate"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"  />
+                    android:textSize="18sp"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1.7"
+                    android:textStyle="italic"
+                    android:textColor="@color/white"/>
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:background="@drawable/background_gradient">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7.2"
+        android:layout_weight="8.0"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
         <TextView
@@ -92,7 +100,7 @@
                     android:background="@null"
                     android:entries="@array/Block"
                     android:layout_gravity="center"
-                    android:paddingLeft="10dp"/>
+                    android:paddingStart="10dp"/>
             </LinearLayout>
             <TextView
                 android:id="@+id/flat"
@@ -102,7 +110,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Select Flat"
+                android:text="Select Flat Number"
 
                 android:textSize="18sp"/>
             <LinearLayout
@@ -120,7 +128,6 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.95"
-                    android:background="@null"
                     android:entries="@array/Block"
                     android:layout_gravity="center"
                     android:paddingLeft="10dp"/>
@@ -186,40 +193,7 @@
                     android:layout_weight="0.95"
                     android:background="@null"
                     android:hint="5"
-                    android:layout_gravity="center"
-                    android:imeOptions="actionDone"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    android:textSize="15sp"/>
-            </LinearLayout>
-            <TextView
-                android:id="@+id/vehicle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Vehicle Name and Number"
-                android:textSize="18sp"/>
-            <LinearLayout
-                android:id="@+id/ll3"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shapebutton"
-                android:orientation="horizontal"
-                android:weightSum="1">
-                <EditText
-                    android:id="@+id/v_number"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.95"
-                    android:background="@null"
-                    android:hint="KIA-TS-08-1234"
+                    android:inputType="number"
                     android:layout_gravity="center"
                     android:imeOptions="actionDone"
                     android:paddingLeft="10dp"
@@ -256,6 +230,40 @@
                     android:entries="@array/Vehicle_type"
                     android:layout_gravity="center"
                     android:paddingLeft="10dp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/vehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Vehicle Name and Number"
+                android:textSize="18sp"/>
+            <LinearLayout
+                android:id="@+id/ll3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shapebutton"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <EditText
+                    android:id="@+id/v_number"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.95"
+                    android:background="@null"
+                    android:hint="KIA-TS-08-1234"
+                    android:layout_gravity="center"
+                    android:imeOptions="actionDone"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="15sp"/>
             </LinearLayout>
             <TextView
                 android:id="@+id/remarks"
@@ -330,5 +338,6 @@
         android:layout_height="0dp"
         android:background="@drawable/bottombackground"
         android:layout_weight="2.0">
+    </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -27,7 +27,7 @@ class SplashScreenActivity : AppCompatActivity() {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
         Handler(Looper.getMainLooper()).postDelayed({
             if (SaveAppData.getLoginData() != null) {
-                val i = Intent(this@SplashScreenActivity, InstantApprovalSecurity::class.java)
+                val i = Intent(this@SplashScreenActivity, MainActivity2::class.java)
                 startActivity(i)
                 finish()
             } else {
