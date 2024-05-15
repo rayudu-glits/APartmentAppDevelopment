@@ -2,8 +2,15 @@ package complaints.com.aparmentapp.Sharedpreferences;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.provider.Settings;
 
+import androidx.appcompat.app.AlertDialog;
+
+import complaints.com.aparmentapp.InstantApprovalSecurity;
 import complaints.com.aparmentapp.R;
 
 /**
@@ -31,4 +38,5 @@ public class BaseUrlClass {
         // dialog.setMessage(Message);
         return progressdialog;
     }
+
 }

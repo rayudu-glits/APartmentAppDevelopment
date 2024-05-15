@@ -68,7 +68,6 @@
             android:weightSum="3">
 
             <LinearLayout
-                android:id="@+id/approve"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -76,6 +75,7 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/approve"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     app:cardBackgroundColor="@color/white"

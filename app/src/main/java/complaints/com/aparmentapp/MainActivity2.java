@@ -2,14 +2,18 @@ package complaints.com.aparmentapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
@@ -43,15 +47,19 @@ public class MainActivity2 extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawer;
     TextView tv_userName,tv_email;
-    ImageView add;
+    ImageView add,Cancel;
+    AlertDialog alertDialog;
+    LinearLayout Guest,Addguest,preapprove,delivery,adddelivery,cab,addcab;
 
     private ActivityMain2Binding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
         add=findViewById(R.id.plus);
+        preapprove=findViewById(R.id.preApproval);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         add.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +68,61 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(new Intent(MainActivity2.this, InstantApprovalSecurity.class));
             }
         });
+        preapprove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("slect","onclick");
+                AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity2.this);
+                View view_alert= LayoutInflater.from(MainActivity2.this).inflate(R.layout.preapprove,null);
+                Log.d("slect","click");
+                Cancel=view_alert.findViewById(R.id.close_btn);
+                Guest=view_alert.findViewById(R.id.guestll);
+                Addguest=view_alert.findViewById(R.id.addguest);
+                adddelivery=view_alert.findViewById(R.id.adddelivery);
+                delivery=view_alert.findViewById(R.id.deliveryll);
+                cab=view_alert.findViewById(R.id.cabs);
+                addcab=view_alert.findViewById(R.id.addcab);
+                adddelivery.setVisibility(View.GONE);
+                Addguest.setVisibility(View.GONE);
+                Guest.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Addguest.setVisibility(View.VISIBLE);
+                        adddelivery.setVisibility(View.GONE);
+                        addcab.setVisibility(View.GONE);
+                    }
+                });
+                delivery.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        adddelivery.setVisibility(View.VISIBLE);
+                        Addguest.setVisibility(View.GONE);
+                        addcab.setVisibility(View.GONE);
+                    }
+                });
+                cab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Addguest.setVisibility(View.GONE);
+                        adddelivery.setVisibility(View.GONE);
+                        addcab.setVisibility(View.VISIBLE);
+                    }
+                });
+                Cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        alertDialog.dismiss();
+                    }
+                });
+                dialog.setView(view_alert);
+                dialog.setCancelable(false);
+                alertDialog = dialog.create();
+                alertDialog.show();
+            }
+        });
+
+
         initNavigationDrawer();
     }
     public void initNavigationDrawer() {
@@ -82,11 +145,10 @@ public class MainActivity2 extends AppCompatActivity {
                         drawer.closeDrawers();
                         break;
                     case R.id.preApproval:
-//                        viewPager.setCurrentItem(3);
                         drawer.closeDrawers();
                         break;
                     case R.id.post_approval:
-//                        viewPager.setCurrentItem(4);
+                        startActivity(new Intent(MainActivity2.this, InstantApprovalSecurity.class));
                         drawer.closeDrawers();
                         break;
                     case R.id.rv_Logout:
