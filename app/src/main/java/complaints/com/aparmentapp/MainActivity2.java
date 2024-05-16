@@ -47,9 +47,9 @@ public class MainActivity2 extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawer;
     TextView tv_userName,tv_email;
-    ImageView add,Cancel;
+    ImageView add,Cancel,notification,user;
     AlertDialog alertDialog;
-    LinearLayout Guest,Addguest,preapprove,delivery,adddelivery,cab,addcab;
+    LinearLayout Guest,Addguest,preapprove,delivery,adddelivery,cab,addcab,dailyhelp,Settings;
 
     private ActivityMain2Binding binding;
 
@@ -60,6 +60,10 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         add=findViewById(R.id.plus);
         preapprove=findViewById(R.id.preApproval);
+        dailyhelp=findViewById(R.id.dailyhelp);
+        Settings=findViewById(R.id.setting);
+        user=findViewById(R.id.user);
+        notification=findViewById(R.id.notification);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         add.setOnClickListener(new View.OnClickListener() {
@@ -68,46 +72,39 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(new Intent(MainActivity2.this, InstantApprovalSecurity.class));
             }
         });
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity2.this, ProfileActivity.class));
+            }
+        });
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity2.this, Settings.class));
+            }
+        });
+        Settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity2.this, complaints.com.aparmentapp.Settings.class));
+            }
+        });
+        dailyhelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity2.this, Dailyhelp.class));
+
+            }
+        });
         preapprove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("slect","onclick");
                 AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity2.this);
-                View view_alert= LayoutInflater.from(MainActivity2.this).inflate(R.layout.preapprove,null);
+                View view_alert= LayoutInflater.from(MainActivity2.this).inflate(R.layout.preapprovallist,null);
                 Log.d("slect","click");
-                Cancel=view_alert.findViewById(R.id.close_btn);
-                Guest=view_alert.findViewById(R.id.guestll);
-                Addguest=view_alert.findViewById(R.id.addguest);
-                adddelivery=view_alert.findViewById(R.id.adddelivery);
-                delivery=view_alert.findViewById(R.id.deliveryll);
-                cab=view_alert.findViewById(R.id.cabs);
-                addcab=view_alert.findViewById(R.id.addcab);
-                adddelivery.setVisibility(View.GONE);
-                Addguest.setVisibility(View.GONE);
-                Guest.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Addguest.setVisibility(View.VISIBLE);
-                        adddelivery.setVisibility(View.GONE);
-                        addcab.setVisibility(View.GONE);
-                    }
-                });
-                delivery.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        adddelivery.setVisibility(View.VISIBLE);
-                        Addguest.setVisibility(View.GONE);
-                        addcab.setVisibility(View.GONE);
-                    }
-                });
-                cab.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Addguest.setVisibility(View.GONE);
-                        adddelivery.setVisibility(View.GONE);
-                        addcab.setVisibility(View.VISIBLE);
-                    }
-                });
+                Cancel=view_alert.findViewById(R.id.cancel_btn);
                 Cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -137,14 +134,30 @@ public class MainActivity2 extends AppCompatActivity {
 
                 switch (id){
                     case R.id.home:
-//                        viewPager.setCurrentItem(1);
+                        startActivity(new Intent(MainActivity2.this, MainActivity2.class));
                         drawer.closeDrawers();
                         break;
                     case R.id.profile:
-//                        viewPager.setCurrentItem(2);
+                        startActivity(new Intent(MainActivity2.this, Settings.class));
                         drawer.closeDrawers();
                         break;
                     case R.id.preApproval:
+                                Log.d("slect","onclick");
+                                AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity2.this);
+                                View view_alert= LayoutInflater.from(MainActivity2.this).inflate(R.layout.preapprovallist,null);
+                                Log.d("slect","click");
+                                Cancel=view_alert.findViewById(R.id.cancel_btn);
+                                Cancel.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+
+                                        alertDialog.dismiss();
+                                    }
+                                });
+                                dialog.setView(view_alert);
+                                dialog.setCancelable(false);
+                                alertDialog = dialog.create();
+                                alertDialog.show();
                         drawer.closeDrawers();
                         break;
                     case R.id.post_approval:

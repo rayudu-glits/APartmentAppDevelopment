@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:shape="oval"
     tools:ignore="ExtraText">
-    <solid android:color="@android:color/transparent" />
+    <solid android:color="@android:color/white" />
     <stroke
         android:width="2dp"
     android:color="@color/colorPrimary" />

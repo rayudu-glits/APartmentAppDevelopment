@@ -25,7 +25,10 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:layout_weight="0.35"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/circularshape"
                     android:layout_gravity="center"
                     android:src="@drawable/chat"/>
             <TextView
