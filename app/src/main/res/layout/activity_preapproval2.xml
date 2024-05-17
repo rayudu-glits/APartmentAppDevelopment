@@ -136,11 +136,11 @@
                 <Spinner
                     android:id="@+id/blockspinner"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="0.95"
                     android:entries="@array/Block"
                     android:layout_gravity="center"
-                    android:paddingLeft="10dp"/>
+                    android:paddingStart="10dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -237,7 +237,7 @@
                 <Spinner
                     android:id="@+id/Vehicletype"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="0.95"
                     android:entries="@array/Vehicle_type"
                     android:layout_gravity="center"
@@ -297,17 +297,16 @@
             android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:weightSum="1">
-
             <EditText
                 android:id="@+id/Remarks"
-                android:layout_width="382dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="0.95"
                 android:background="@drawable/buttonshape"
                 android:hint="Remarks"
                 android:imeOptions="actionDone"
-                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
                 android:textSize="15sp" />
