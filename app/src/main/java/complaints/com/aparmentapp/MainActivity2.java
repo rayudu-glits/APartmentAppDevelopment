@@ -161,7 +161,7 @@ public class MainActivity2 extends AppCompatActivity {
                         drawer.closeDrawers();
                         break;
                     case R.id.post_approval:
-                        startActivity(new Intent(MainActivity2.this, InstantApprovalSecurity.class));
+                        startActivity(new Intent(MainActivity2.this, preapproval2.class));
                         drawer.closeDrawers();
                         break;
                     case R.id.rv_Logout:
@@ -179,7 +179,7 @@ public class MainActivity2 extends AppCompatActivity {
         View header = navigationView.getHeaderView(0);
         tv_email = (TextView)header.findViewById(R.id.tv_email);
         tv_userName = (TextView)header.findViewById(R.id.tv_userName);
-        tv_userName.setText(SaveAppData.getLoginData().getEmp_first_name());
+//        tv_userName.setText(SaveAppData.getLoginData().getEmp_first_name());
 
         drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(MainActivity2.this,drawer,toolbar,R.string.drawer_open,R.string.drawer_close){

@@ -315,24 +315,20 @@
                 android:scaleType="fitXY"
                 android:layout_gravity="center"
                 android:src="@drawable/camera"/>
-            <Button
-                android:id="@+id/submit_btn"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/login_btn"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginRight="40dp"
-                android:text="Submit "
-                android:layout_marginBottom="15dp"
+                android:text="Sign in "
                 android:layout_gravity="end"
-                android:background="@drawable/gradientbutton"
+                android:background="@drawable/buttonshape"
                 android:textColor="@color/white"
                 android:textAllCaps="false"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingTop="10dp"
                 android:textSize="18sp"
-                android:elevation="4dp"
-                android:stateListAnimator="@null"/>
+                android:backgroundTint="@color/colorPrimary"/>
         </LinearLayout>
         </ScrollView>
     </LinearLayout>

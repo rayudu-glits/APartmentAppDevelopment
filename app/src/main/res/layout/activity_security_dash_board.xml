@@ -69,27 +69,23 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginLeft="@dimen/_5dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:weightSum="3">
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
-
                 <androidx.cardview.widget.CardView
                     android:id="@+id/approve"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="25dp"
                     app:cardElevation="3dp"
                     app:cardPreventCornerOverlap="true">
-
                     <LinearLayout
                         android:id="@+id/preApproval"
                         android:layout_width="match_parent"
@@ -112,19 +108,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/buttonshape"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
                             android:orientation="vertical">
                         <ImageView
                             android:layout_width="45dp"
                             android:layout_height="50dp"
+                            android:padding="5dp"
+                            android:scaleType="fitXY"
                             android:layout_gravity="center"
                             android:src="@drawable/user1" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-
             <LinearLayout
                 android:id="@+id/dailyhelp"
                 android:layout_width="0dp"
@@ -132,15 +129,13 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
-
                 <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="25dp"
                     app:cardElevation="3dp"
                     app:cardPreventCornerOverlap="true">
-
                     <LinearLayout
                         android:id="@+id/help"
                         android:layout_width="match_parent"
@@ -163,12 +158,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/buttonshape"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
                             android:orientation="vertical">
                             <ImageView
                                 android:layout_width="45dp"
                                 android:layout_height="50dp"
+                                android:padding="5dp"
+                                android:scaleType="fitXY"
                                 android:layout_gravity="center"
                                 android:src="@drawable/user1" />
                         </LinearLayout>
@@ -182,15 +179,13 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
-
                 <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="25dp"
                     app:cardElevation="3dp"
                     app:cardPreventCornerOverlap="true">
-
                     <LinearLayout
                         android:id="@+id/setting"
                         android:layout_width="match_parent"
@@ -213,12 +208,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/buttonshape"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
                             android:orientation="vertical">
                             <ImageView
                                 android:layout_width="45dp"
                                 android:layout_height="50dp"
+                                android:padding="5dp"
+                                android:scaleType="fitXY"
                                 android:layout_gravity="center"
                                 android:src="@drawable/settings" />
                         </LinearLayout>

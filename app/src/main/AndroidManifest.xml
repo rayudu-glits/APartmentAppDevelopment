@@ -35,6 +35,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".preapproval2"
+            android:exported="false" />
+        <activity
+            android:name=".Preapprovescreen"
+            android:exported="false" />
+        <activity
             android:name=".Dailyhelp"
             android:exported="false" />
         <activity

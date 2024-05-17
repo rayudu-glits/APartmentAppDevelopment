@@ -35,7 +35,7 @@
         <item>Four wheeler</item>
     </string-array>
     <string-array name="package_array">
-        <item>Package</item>
+        <item>Select</item>
         <item>201A</item>
         <item>201B</item>
         <item>201C</item>
@@ -43,12 +43,12 @@
         <item>201E</item>
     </string-array>
     <string-array name="paymentsfor_array">
-        <item>Package</item>
-        <item>201A</item>
-        <item>201B</item>
-        <item>201C</item>
-        <item>201D</item>
-        <item>201E</item>
+        <item>Select</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
     <string-array name="owener_array">
         <item>Select Owenership</item>
