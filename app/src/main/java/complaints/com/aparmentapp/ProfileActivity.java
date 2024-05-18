@@ -20,7 +20,8 @@ public class ProfileActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ProfileActivity.this, MainActivity2.class));
+//                startActivity(new Intent(ProfileActivity.this, MainActivity2.class));
+                onBackPressed();
             }
         });
     }

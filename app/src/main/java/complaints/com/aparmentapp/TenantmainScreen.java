@@ -20,44 +20,23 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import complaints.com.aparmentapp.Fragments.CollectionsFragment;
-import complaints.com.aparmentapp.Fragments.ComplaintsFragment;
-import complaints.com.aparmentapp.Fragments.EventsFragment;
-import complaints.com.aparmentapp.Fragments.ExpensesFragment;
-import complaints.com.aparmentapp.Fragments.MembersFragment;
-import complaints.com.aparmentapp.Fragments.PromotionsFragment;
-import complaints.com.aparmentapp.Fragments.StaffFragment;
-import complaints.com.aparmentapp.Fragments.VendorsFragment;
-import complaints.com.aparmentapp.Fragments.VisitorsFragment;
 import complaints.com.aparmentapp.Sharedpreferences.SaveAppData;
-import complaints.com.aparmentapp.databinding.ActivityMain2Binding;
 
-public class MainActivity2 extends AppCompatActivity {
+public class TenantmainScreen extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawer;
     TextView tv_userName,tv_email;
-    ImageView add,Cancel,notification,user;
-    AlertDialog alertDialog;
+    ImageView add,notification,user;
     LinearLayout Guest,Addguest,preapprove,delivery,adddelivery,cab,addcab,dailyhelp,Settings;
-
-    private ActivityMain2Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_tenantmain_screen);
         add=findViewById(R.id.plus);
         preapprove=findViewById(R.id.preApproval);
         dailyhelp=findViewById(R.id.dailyhelp);
@@ -69,59 +48,44 @@ public class MainActivity2 extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity2.this, preapproval2.class));
+                startActivity(new Intent(TenantmainScreen.this, Preapprovescreen.class));
             }
         });
         notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity2.this, ProfileActivity.class));
+                startActivity(new Intent(TenantmainScreen.this, ProfileActivity.class));
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity2.this, Settings.class));
+                startActivity(new Intent(TenantmainScreen.this, Settings.class));
             }
         });
         Settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity2.this, complaints.com.aparmentapp.Settings.class));
+                startActivity(new Intent(TenantmainScreen.this, complaints.com.aparmentapp.Settings.class));
             }
         });
         dailyhelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity2.this, Dailyhelp.class));
+                startActivity(new Intent(TenantmainScreen.this, ProfileActivity.class));
 
             }
         });
         preapprove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("slect","onclick");
-                AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity2.this);
-                View view_alert= LayoutInflater.from(MainActivity2.this).inflate(R.layout.preapprovallist,null);
-                Log.d("slect","click");
-                Cancel=view_alert.findViewById(R.id.cancel_btn);
-                Cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        alertDialog.dismiss();
-                    }
-                });
-                dialog.setView(view_alert);
-                dialog.setCancelable(false);
-                alertDialog = dialog.create();
-                alertDialog.show();
+                startActivity(new Intent(TenantmainScreen.this, Preapprovescreen.class));
             }
         });
-
-
         initNavigationDrawer();
+
     }
+
     public void initNavigationDrawer() {
 
         NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
@@ -134,39 +98,24 @@ public class MainActivity2 extends AppCompatActivity {
 
                 switch (id){
                     case R.id.home:
-                        startActivity(new Intent(MainActivity2.this, MainActivity2.class));
+                        startActivity(new Intent(TenantmainScreen.this, TenantmainScreen.class));
                         drawer.closeDrawers();
                         break;
                     case R.id.profile:
-                        startActivity(new Intent(MainActivity2.this, Settings.class));
+                        startActivity(new Intent(TenantmainScreen.this, Settings.class));
                         drawer.closeDrawers();
                         break;
                     case R.id.preApproval:
-                                Log.d("slect","onclick");
-                                AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity2.this);
-                                View view_alert= LayoutInflater.from(MainActivity2.this).inflate(R.layout.preapprovallist,null);
-                                Log.d("slect","click");
-                                Cancel=view_alert.findViewById(R.id.cancel_btn);
-                                Cancel.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-
-                                        alertDialog.dismiss();
-                                    }
-                                });
-                                dialog.setView(view_alert);
-                                dialog.setCancelable(false);
-                                alertDialog = dialog.create();
-                                alertDialog.show();
+                        startActivity(new Intent(TenantmainScreen.this, Preapprovescreen.class));
                         drawer.closeDrawers();
                         break;
                     case R.id.post_approval:
-                        startActivity(new Intent(MainActivity2.this, preapproval2.class));
+                        startActivity(new Intent(TenantmainScreen.this, ProfileActivity.class));
                         drawer.closeDrawers();
                         break;
                     case R.id.rv_Logout:
                         SaveAppData.saveEmpLoginData(null);
-                        Intent i = new Intent(MainActivity2.this, LoginActivity.class);
+                        Intent i = new Intent(TenantmainScreen.this, LoginActivity.class);
                         startActivity(i);
                         finish();
                         drawer.closeDrawers();
@@ -182,7 +131,7 @@ public class MainActivity2 extends AppCompatActivity {
 //        tv_userName.setText(SaveAppData.getLoginData().getEmp_first_name());
 
         drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(MainActivity2.this,drawer,toolbar,R.string.drawer_open,R.string.drawer_close){
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(TenantmainScreen.this,drawer,toolbar,R.string.drawer_open,R.string.drawer_close){
             @Override
             public void onDrawerClosed(View v){
                 super.onDrawerClosed(v);

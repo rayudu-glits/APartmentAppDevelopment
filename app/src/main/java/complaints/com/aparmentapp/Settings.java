@@ -20,8 +20,8 @@ public class Settings extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Settings.this, MainActivity2.class));
-
+//                startActivity(new Intent(Settings.this, MainActivity2.class));
+                onBackPressed();
             }
         });
     }
