@@ -27,8 +27,9 @@ public class Preapprovescreen extends AppCompatActivity {
         delivery=findViewById(R.id.deliveryll);
         cab=findViewById(R.id.cabs);
         addcab=findViewById(R.id.addcab);
-        adddelivery.setVisibility(View.GONE);
         Addguest.setVisibility(View.GONE);
+        adddelivery.setVisibility(View.GONE);
+        addcab.setVisibility(View.GONE);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
